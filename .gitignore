@@ -1,0 +1,6 @@
+test.db
+*.pyc
+env
+settings/epio.py
+.epio-app
+TODO
