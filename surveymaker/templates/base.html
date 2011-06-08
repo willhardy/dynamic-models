@@ -14,8 +14,8 @@
     <h1>Dynamic Models Demonstration</h1>
     <p>This demonstration simply displays all data from survey responses at once, to see the structure and data of all tables.</p>
     <ul>
-        <li><a href="{% url surveymaker_all %}">View all responses</a></li>
-        {% for survey,x in surveys %}<li><a href="{% url surveymaker_form survey_slug=survey.slug %}">{{ survey.name }}</a></li>{% endfor %}
+        <li><a href="{% url surveymaker_index %}">View *ALL* responses</a></li>
+        {% for survey,x in surveys %}<li><a href="{% url surveymaker_form survey_slug=survey.slug %}">Take the survey: "{{ survey.name }}"</a></li>{% endfor %}
     </ul>
     {% endblock header %}
     </header>

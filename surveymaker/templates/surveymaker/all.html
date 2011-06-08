@@ -3,7 +3,7 @@
 {% block content %}
         {% for survey,responses in surveys %}
         <h2>{{ survey }}</h2>
-        <table>
+        <table class="results">
           <tr>{% for question in survey.question_set.all %}<th>{{ question.slug }}</th>{% endfor %}</tr>
             {% for response in responses %}
               <tr>{% for d in response.data %}<td>{{ d }}</td>{% endfor %}</tr>

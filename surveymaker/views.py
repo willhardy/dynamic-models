@@ -37,6 +37,6 @@ def survey_form(request, survey_slug):
     else:
         form = ResponseForm()
 
-    return render_to_response(template_name, {'form': form}, 
+    return render_to_response(template_name, {'form': form, 'survey': survey}, 
                                 context_instance=RequestContext(request))
 

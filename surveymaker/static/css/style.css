@@ -1,5 +1,8 @@
 body { font-family: sans-serif; color: #444; padding: 20px; }
 h2 { border-top: 1px solid #bbb; margin-top: 40px; padding: 10px 0;}
-table { border: 1px solid #999; border-collapse: collapse;}
-table th { background: #444; color: #fff; padding: 4px 10px;}
-table td { padding: 2px 10px; }
+table.results { border: 1px solid #999; border-collapse: collapse;}
+table.results th { background: #444; color: #fff; padding: 4px 10px;}
+table.results td { padding: 2px 10px; }
+ul.survey { margin-bottom: 30px; list-style: none; padding: 0;}
+ul.survey li { margin: 0 0 20px 0; }
+ul.survey label { display: block; font-weight: normal; }
