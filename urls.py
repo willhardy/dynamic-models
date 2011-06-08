@@ -3,9 +3,8 @@ from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
-from surveymaker.views import AllSurveyResponses
-
 urlpatterns = patterns('',
-    url(r'^$', AllSurveyResponses.as_view(), name='all'),
+    url(r'^$', 'surveymaker.views.all_survey_responses', name='surveymaker_all'),
+    url(r'^(?P<survey_slug>.*)/new/$', 'surveymaker.views.survey_form', name='surveymaker_form'),
     url(r'^admin/', include(admin.site.urls)),
 )

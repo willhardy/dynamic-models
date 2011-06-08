@@ -61,13 +61,16 @@ def survey_post_save(sender, instance, created, **kwargs):
     """ Ensure that a table exists for this logger. """
 
     # Force our response model to regenerate
-    Response = instance.get_survey_response_model(regenerate=True)
+    Response = instance.get_survey_response_model(regenerate=True, notify_changes=False)
 
     # Create a new table if it's missing
     utils.create_db_table(Response)
 
     # Reregister the model in the admin
     utils.reregister_in_admin(admin.site, Response)
+
+    # Tell other process to regenerate their models
+    utils.notify_model_change(Response)
 
 
 def survey_pre_delete(sender, instance, **kwargs):
@@ -78,8 +81,5 @@ def survey_pre_delete(sender, instance, **kwargs):
 
     # unregister from the admin site
     utils.unregister_from_admin(admin.site, Response)
-
-    # Remove admin URL patterns
-    # ??? :-(
 
 

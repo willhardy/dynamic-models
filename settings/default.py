@@ -1,4 +1,4 @@
-# Django settings for rtdm_example project.
+# Django settings for dynamic_models project.
 
 import os
 PROJECT_DIR = os.path.join(os.path.dirname(__file__), '..')
@@ -9,7 +9,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-     ('Will Hardy', 'rtdm@willhardy.com.au'),
+     ('Will Hardy', 'dynamic_models@willhardy.com.au'),
 )
 
 MANAGERS = ADMINS
@@ -103,7 +103,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'rtdm_example.urls'
+ROOT_URLCONF = 'dynamic_models.urls'
 
 CACHES = {
     'default': {
