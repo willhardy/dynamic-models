@@ -3,7 +3,6 @@ from __future__ import absolute_import
 
 from .models import Survey
 
-from django.views.generic import TemplateView
 from django import forms
 from django.shortcuts import render_to_response, get_object_or_404, redirect
 from django.template.context import RequestContext
