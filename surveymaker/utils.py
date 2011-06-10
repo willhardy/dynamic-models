@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 from django.db import connection, DatabaseError
-from django.contrib.gis.db import models
+from django.db import models
 from django.contrib.admin.sites import NotRegistered
 from django.db.models.signals import class_prepared
 from django.db.models.loading import cache as app_cache
