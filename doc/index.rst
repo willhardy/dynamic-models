@@ -3,13 +3,19 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Runtime Dynamic Models's documentation!
-==================================================
+==================================
+Runtime Dynamic Models with Django
+==================================
 
-Contents:
+The flexibility of Python and Django allow developers to dynamically create
+models to store and access data using Django's ORM. 
+But you need to be careful if you go down this road, especially if your models
+are set to change at runtime. 
+This documentation will cover a number of things to consider when making use 
+of runtime dynamic models.
 
-.. toctree::
-   :maxdepth: 2
+- :ref:`Defining a dynamic model factory <topics-model>`
+
 
 Indices and tables
 ==================
