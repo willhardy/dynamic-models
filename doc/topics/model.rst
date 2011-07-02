@@ -136,3 +136,19 @@ new API, but is a little more explicit than subclassing ``QuerySet``.
     print People.objects.filter(my_query('color', 'blue', name="Jenny"))
 
 
+What comes next?
+----------------
+
+Although this is enough to define a Django model class, 
+if the model isn't in existence when ``syncdb`` is run, 
+no respective database tables will be created.
+The creation and migration of database tables is covered in
+:ref:`database migration <topics-database-migration>`.
+
+Also relevant is the appropriately time regeneration of the model class, 
+(`especially` if you want to host using more than one server)
+see :ref:`model migration <topics-model-migration>` and, if you would like
+to edit the dynamic models in Django's admin, 
+:ref:`admin migration <topics-admin-migration>`.
+
+

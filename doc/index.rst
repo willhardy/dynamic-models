@@ -15,6 +15,9 @@ This documentation will cover a number of things to consider when making use
 of runtime dynamic models.
 
 - :ref:`Defining a dynamic model factory <topics-model>`
+- :ref:`Model migration <topics-model-migration>`
+- :ref:`Database migration <topics-database-migration>`
+- :ref:`Admin migration <topics-admin-migration>`
 
 
 Indices and tables
