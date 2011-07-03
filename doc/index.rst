@@ -20,6 +20,14 @@ of runtime dynamic models.
 - :ref:`Database schema migration <topics-database-migration>`
 - :ref:`Admin migration <topics-admin-migration>`
 
+
+Example implementation
+======================
+
+An example implementation of dynamic models is also provided for reference.
+It is hosted here on GitHub:
+`willhardy/dynamic-models <https://github.com/willhardy/dynamic-models>`_.
+
 DjangoCon.eu Talk
 =================
 
