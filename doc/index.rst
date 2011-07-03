@@ -16,7 +16,7 @@ of runtime dynamic models.
 
 - :ref:`Defining a dynamic model factory <topics-model>`
 - :ref:`Model migration <topics-model-migration>`
-- :ref:`Database migration <topics-database-migration>`
+- :ref:`Database schema migration <topics-database-migration>`
 - :ref:`Admin migration <topics-admin-migration>`
 
 
