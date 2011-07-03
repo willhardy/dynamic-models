@@ -82,6 +82,9 @@ own deletion policy and process, depending on your needs.
     db.delete_table(table_name)
     db.delete_column(table_name, field) 
 
+.. note::
+    Note that this South functionality is in the process of being merged into 
+    Django core. It will hopefully land in trunk in the near future.
 
 Timing the changes
 ------------------

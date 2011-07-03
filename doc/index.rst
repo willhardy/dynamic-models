@@ -1,7 +1,8 @@
-.. Runtime Dynamic Models documentation master file, created by
-   sphinx-quickstart on Wed Jun  8 01:55:36 2011.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. Main landing page for dynamic models documentation.
+   TODO: 
+        Add an overview, with practical examples
+        Discuss reasons to use / not to use this technique
+        Add small section on database errors to db migration page.
 
 ==================================
 Runtime Dynamic Models with Django
@@ -23,6 +24,7 @@ of runtime dynamic models.
 Indices and tables
 ==================
 
+* :ref:`contents`
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
