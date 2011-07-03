@@ -4,8 +4,8 @@ Runtime dynamic models with Django
 This is an example project to demonstrate a number of techniques that allow
 dynamic models to work. 
 This was written to accompany a talk at 2011 Djangocon.eu, the text of the
-talk will be provided in the documentation folder of this project and a link
-to the video will be provided here when it is available.
+talk is provided in `this project's documentation <http://dynamic-models.readthedocs.org/>`_ and a video
+of the presentation `can be found here <http://2011.djangocon.eu/talks/22/>`_.
 
 The project is a simple survey maker, where admin users can define surveys.
 The responses can then be stored in a customised table for that survey, 

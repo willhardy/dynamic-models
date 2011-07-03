@@ -20,6 +20,13 @@ of runtime dynamic models.
 - :ref:`Database schema migration <topics-database-migration>`
 - :ref:`Admin migration <topics-admin-migration>`
 
+DjangoCon.eu Talk
+=================
+
+This topic was presented at DjangoCon and these notes have been written
+as supplementary documentation for that talk.
+The talk can be `viewed online here <http://2011.djangocon.eu/talks/22/>`_.
+
 
 Indices and tables
 ==================
