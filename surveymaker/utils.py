@@ -110,6 +110,28 @@ def when_classes_prepared(app_name, dependencies, fn):
     class_prepared.connect(_class_prepared_handler, weak=False)
 
 
+def get_cached_model(app_label, model_name, regenerate=False, get_local_hash=lambda i: i._hash):
+
+    # If this model has already been generated, we'll find it here
+    previous_model = models.get_model(app_label, model_name)
+
+    # Before returning our locally cached model, check that it is still current
+    if previous_model is not None and not regenerate:
+        CACHE_KEY = utils.HASH_CACHE_TEMPLATE % (app_label, model_name)
+        if cache.get(CACHE_KEY) != get_local_hash(previous_model):
+            logging.debug("Local and shared dynamic model hashes are different: %s (local) %s (shared)" % (get_local_hash(previous_model), cache.get(CACHE_KEY)))
+            regenerate = True
+
+    # We can force regeneration by disregarding the previous model
+    if regenerate:
+        previous_model = None
+        # Django keeps a cache of registered models, we need to make room for
+        # our new one
+        utils.remove_from_model_cache(app_label, model_name)
+
+    return previous_model
+
+
 def remove_from_model_cache(app_label, model_name):
     """ Removes the given model from the model cache. """
     try:

@@ -16,36 +16,21 @@ def get_survey_response_model(survey, regenerate=False, notify_changes=True):
     _app_label = 'responses'
     _model_name = 'Response'+name
 
-    # If this model has already been generated, we'll find it here
-    previous_model = models.get_model(_app_label, _model_name)
+    # Skip regeneration if we have a valid cached model
+    cached_model = utils.get_cached_model(_app_label, _model_name, regenerate)
+    if cached_model is not None:
+        return cached_model
 
-    # Before returning our locally cached model, check that it is still current
-    if previous_model and not regenerate:
-        CACHE_KEY = utils.HASH_CACHE_TEMPLATE % (_app_label, _model_name)
-        if cache.get(CACHE_KEY) != previous_model._hash:
-            logging.debug("Local and shared dynamic model hashes are different: %s (local) %s (shared)" % (previous_model._hash, cache.get(CACHE_KEY)))
-            regenerate = True
-
-    # We can force regeneration by disregarding the previous model
-    if regenerate:
-        previous_model = None
-        # Django keeps a cache of registered models, we need to make room for
-        # our new one
-        utils.remove_from_model_cache(_app_label, _model_name)
-
-    # Skip regeneration
-    if previous_model:
-        return previous_model
+    # Collect the dynamic model's class attributes
+    attrs = {
+        '__module__': __name__, 
+        '__unicode__': lambda s: '%s response' % name
+    }
 
     class Meta:
         app_label = 'responses'
         verbose_name = survey.name + ' Response'
-
-    attrs = {
-        'Meta': Meta, 
-        '__module__': __name__, 
-        '__unicode__': lambda s: '%s response' % name
-    }
+    attrs['Meta'] = Meta
 
     # Add a field for each question
     questions = survey.question_set.all()
